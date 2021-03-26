@@ -1,33 +1,30 @@
 <!--
-LOINC is a well maintained, version independent code system
+LOINC is a freely available international standard for tests, measurements, and observations. It is a well maintained, version independent code system.
 
-This CodeSystem resource describes 'LOINC' independent of 
-any particular version. There are notes about changes for
-version specific LOINC code system resources. 
+Use of LOINC is governed by the LOINC License: https://loinc.org/license/
 
-Note that the following set of codes constitute the 
-LOINC code systems:
+This CodeSystem resource describes 'LOINC' independent of any particular version. There are notes about changes for version specific LOINC code system resources. 
+
+Note that the following set of codes are defined by the LOINC code systems:
  - the main LOINC codes
  - the LOINC answer codes (LA-) and the LOINC answer list codes (LL-)
- - the Part codes in the Multiaxial Hierarchy
- - the Part codes for the properties. 
+ - the LOINC Part codes (LP-) in the Multiaxial Hierarchy
+ - the LOINC Part codes (LP-) for the properties
     Note: there are license restrictions on the use of LOINC Part codes
- 
+ - the LOINC Group codes
+    Note: presently the LOINC Group codes are used to identify these roll-up groups as ValueSets, but are not yet loaded as codes in the CodeSystem
+
 Servers may generate variants of this for the LOINC version(s) and features they support.
+
+File Version: 0.5
 -->
-<!--
-Version History of this specification
-0.1 | published 2016 11 18
-0.2 | published 2017 03 10 (fixed rad properties, removed list-specific LA properties, typos)
-0.3 | published 2017 05 09 (removed CHNGE_TYP based on LOINC Committee recommendation, change filter types from code vs coding -> which allows use of the LP codes or the Part names)
-0.4 | published 2018 02 09 (fixed multiaxial hierarchy relationship, added clarifying statement about English as the language for filters)
--->
+
 <CodeSystem xmlns="http://hl7.org/fhir">
   <id value="loinc"/>
   
-  <!-- This url is unchanged for all versions of LOINC. There
-    can only be one correct Code System resource for each value of the
-    version attribute (at least, only one per server) -->
+  <!--
+  This url is unchanged for all versions of LOINC. There can only be one correct Code System resource for each value of the version attribute (at least, only one per server)
+  -->
   <url value="http://loinc.org"/> 
   
   <!-- the HL7 v3 OID assigned to LOINC -->
@@ -37,11 +34,13 @@ Version History of this specification
   </identifier>
   
   <!--  
-  // if a version is specified:
+  If a version is specified:
   <version value="2.59"/> 
   -->
 
-  <!-- if a specific version is specified, the name should carry this information should be in the name (e.g. LOINC_259) and title -->
+  <!--
+  If a specific version is specified, the name should carry this information should be in the name (e.g. LOINC_259) and title
+  -->
   <name value="LOINC"/> 
   <title value="LOINC Code System"/>
   <status value="active"/>
@@ -63,23 +62,26 @@ Version History of this specification
   
   <valueSet value=" http://loinc.org/vs"/>
    <!--
-    for a version specific reference:
+    For a version specific reference:
     <valueSet value="http://loinc.org/2.56/vs"/>
   -->
             
   <!-- 
-    It's at the discretion of servers whether to present fragments of LOINC heirarchically or not, when 
-    using the code system resource. But, if they are heirarchical, the Hierarchy SHALL be based on the is-a relationship that is derived from the LOINC Multiaxial Hierarchy.
-    -->
+    It's at the discretion of servers whether to present fragments of LOINC heirarchically or not, when using the code system resource. But, if they are heirarchical, the Hierarchy SHALL be based on the is-a relationship that is derived from the LOINC Multiaxial Hierarchy.
+  -->
   <HierarchyMeaning value="is-a"/> 
   <compositional value="false"/> <!-- no compositional grammar in LOINC -->
   <versionNeeded value="false"/>
   
-  <!-- this canonical definition of LOINC does not include the content. 
-    Servers may choose to include fragments (but not, due to size constraints, all of LOINC) -->
+  <!--
+  This canonical definition of LOINC does not include the content. 
+  Servers may choose to include fragments (but not, due to size constraints, all of LOINC) -->
   <content value="not-present"/>
   
-<!-- <count value="65000"/>... if working with a specific version, you could nominate a count of the total number of concepts (including the answers, Hierarchy, etc.) -->  
+<!--
+  <count value="65000"/>
+  If working with a specific version, you could nominate a count of the total number of concepts (including the answers, Hierarchy, etc.). In this canonical definition we do not.
+-->  
 
   <!-- 
     Generally defined filters for specifying value sets
@@ -127,13 +129,17 @@ Version History of this specification
     <operator value="="/>
     <value value="LOINC | 3rdParty"/>
   </filter>
-  <!-- properties. There are 3 kinds of properties:
+  <!-- 
+  Properties
+  There are 3 kinds of properties:
     fhir: display, designation; these are not described here since they are inherent in the specification
     infrastructural: defined by FHIR, but documented here for LOINC 
     LOINC properties: defined by the main LOINC table
     concept model: defined by the LOINC Multiaxial Hierarchy 
   -->
-  <!-- first, the infrastructural properties - inherited from FHIR, but documented here -->
+  <!-- 
+  First, the infrastructural properties - inherited from FHIR, but documented here
+  -->
   <property>
     <code value="parent"/>
     <uri value="http://hl7.org/fhir/concept-properties#parent"/> 
@@ -152,14 +158,13 @@ Version History of this specification
    
     Notes:
       SHORTNAME = display & LONG_COMMON_NAME = definition
-      Properties are specified as type "code", which are LOINC Part codes (LP-). 
-      It is anticipated that the LOINC Part codes to be used in these properties will be published in the June 2017 LOINC release.
+      Many properties are specified as type "coding", which allows use of LOINC Part codes (LP-) and the display text. LOINC Parts and their associations to LOINC terms are published in the LOINC Part File.
+      The properties defined here follow the guidance of the LOINC Users Manual, which states that they should be expressed with the LOINC attributes contained in the LOINC Table. Properties that are not defined in the LOINC Table use a FHIR-styled names.
   -->
   <property>
     <code value="STATUS"/>
     <uri value="http://loinc.org/property/STATUS"/>
     <description value="Status of the term. Within LOINC, codes with STATUS=DEPRECATED are considered inactive. Current values: ACTIVE, TRIAL, DISCOURAGED, and DEPRECATED"/>
-    <!-- DV NOTE: changed this from boolean to string -->
     <type value="string"/>
   </property>
   <property>
@@ -204,14 +209,6 @@ Version History of this specification
     <description value="An arbitrary classification of the terms for grouping related observations together"/>
     <type value="string"/>
   </property>
-  <!-- Note: removed in 0.3
-  <property>
-    <code value="CHNG_TYPE"/>
-    <uri value="http://loinc.org/property/CHNG_TYPE"/>
-    <description value="A classification of the type of change made to a LOINC term, e.g. DEL=deprecated, ADD=add"/>
-    <type value="string"/>
-  </property>
-  -->
   <property>
     <code value="VersionLastChanged"/>
     <uri value="http://loinc.org/property/VersionLastChanged"/>
@@ -261,11 +258,11 @@ Version History of this specification
     <type value="string"/>
   </property>
 
-  <!-- LOINC/RSNA Radiology Playbook properties. These apply only to terms in the LOINC/RSNA Radiology Playbook File.
+  <!-- 
+  LOINC/RSNA Radiology Playbook properties. These apply only to terms in the LOINC/RSNA Radiology Playbook File.
        Notes:
-        Properties are specified as type "code", which are LOINC Part codes (LP-) 
-        Converted the attribute names from LOINC style to FHIR style b/c they contained periods
-        Maneuver sub-attributes are being released in 2016 12.
+        Properties are specified as type "coding", which are represented by LOINC Part codes (LP-) and their display names.
+        The attribute names here use FHIR styled names rather than their original LOINC style names b/c those contain periods
   -->
   <property>
     <code value="rad-modality-modality-type"/>
@@ -375,10 +372,12 @@ Version History of this specification
     <description value="Subject is intended for use when there is a need to distinguish between the patient associated with an imaging study, and the target of the study."/>
     <type value="coding"/>
   </property>
-  <!-- Document Ontology properties. These apply only to terms in the LOINC Document Ontology File
-       Notes:
-        Properties are specified as type "code", which are LOINC Part codes (LP-) 
-        Converted the attribute names from LOINC style to FHIR style b/c they contained periods
+  <!-- 
+  Document Ontology properties.
+  These apply only to terms in the LOINC Document Ontology File
+       Notes
+        Properties are specified as type "coding", which are represented by LOINC Part codes (LP-) and their display names.
+        The attribute names here use FHIR styled names rather than their original LOINC style names b/c those contain periods
    -->
   <property>
     <code value="document-kind"/>
