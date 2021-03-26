@@ -9,7 +9,6 @@ Edits include:
 - Corrected validation errors
 
 ## Version 0.4
---------
 Released 2018-02-09
 
 Edits include:
