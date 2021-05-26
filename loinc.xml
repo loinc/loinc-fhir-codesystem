@@ -33,11 +33,11 @@ Servers may generate variants of this for the LOINC version(s) and features they
 	</identifier>
 
 	<!--
-    If a version is specified: <version value="2.69"/>
+    If a version is specified: <version value="2.70"/>
     -->
 
 	<!--
-    If a specific version is specified, the name should carry this information (e.g. LOINC_269).
+    If a specific version is specified, the name should carry this information (e.g. LOINC_270).
     -->
 	<name value="LOINC"/>
 	<title value="LOINC Code System"/>
@@ -53,16 +53,16 @@ Servers may generate variants of this for the LOINC version(s) and features they
 	</contact>
 
 	<!--
-	<date value=2020-12/>
+	<date value=2021-06/>
 	-->
 	<description value="LOINC is a freely available international standard for tests, measurements, and observations"/>
-	<copyright value="This material contains content from LOINC (http://loinc.org). LOINC is copyright ©1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."/>
+	<copyright value="This material contains content from LOINC (http://loinc.org). LOINC is copyright ©1995-2021, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."/>
 	<caseSensitive  value="false"/>
 
 	<valueSet value="http://loinc.org/vs"/>
 	<!--
 	 For a version specific reference:
-	 <valueSet value="http://loinc.org/2.69/vs"/>
+	 <valueSet value="http://loinc.org/2.70/vs"/>
   -->
 
 	<!--
