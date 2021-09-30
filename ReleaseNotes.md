@@ -1,6 +1,11 @@
 # FHIR CodeSystem Definition file release notes
 
 Please see the associated Readme for technical details about the contents of this file.
+## Version 0.9
+Released 2021-06-10
+
+Edits include:
+- Updated copyright year
 
 ## Version 0.8
 Released 2021-03-26
