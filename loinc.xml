@@ -53,16 +53,17 @@ Servers may generate variants of this for the LOINC version(s) and features they
 	</contact>
 
 	<!--
-	<date value=2021-06/>
+	<date value=2022-02/>
 	-->
 	<description value="LOINC is a freely available international standard for tests, measurements, and observations"/>
-	<copyright value="This material contains content from LOINC (http://loinc.org). LOINC is copyright ©1995-2021, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."/>
+	<copyright value="This material contains content from LOINC (http://loinc.org). LOINC is copyright ©1995-2022, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."/>
 	<caseSensitive  value="false"/>
 
 	<valueSet value="http://loinc.org/vs"/>
 	<!--
-	 For a version specific reference:
-	 <valueSet value="http://loinc.org/2.70/vs"/>
+	 To reference a version-specific resource, append the version number such as:
+	 <valueSet value="http://loinc.org/vs/LG38848-4-2.72"/>
+	 Where "-2.72" indicates LOINC version 2.72 of the LOINC Group code LG38848-4.
   -->
 
 	<!--
