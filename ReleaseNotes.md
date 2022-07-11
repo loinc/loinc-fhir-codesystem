@@ -2,6 +2,13 @@
 
 Please see the associated Readme for technical details about the contents of this file.
 
+## Version 0.11
+Released 2022-xx-xx
+
+Edits include:
+Added additional properties so that the loinc.xml properties match the fields in the loinc.csv file.
+
+
 ## Version 0.10
 Released 2022-01-21
 
