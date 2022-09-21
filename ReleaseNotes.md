@@ -6,7 +6,8 @@ Please see the associated Readme for technical details about the contents of thi
 Released 2022-xx-xx
 
 Edits include:
-Added additional properties so that the loinc.xml properties match the fields in the loinc.csv file.
+- Added additional properties so that the loinc.xml properties match the fields in the loinc.csv file.
+- Updated name from LOINC Multiaxial Hierarchy to LOINC Component Hierarchy by System.
 
 
 ## Version 0.10
