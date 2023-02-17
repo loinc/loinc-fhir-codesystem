@@ -2,6 +2,15 @@
 
 Please see the associated Readme for technical details about the contents of this file.
 
+## Version 0.11
+Released 2023-02-17
+
+Edits include:
+- Updated copyright year
+- Added additional properties so that the loinc.xml properties match the fields in the loinc.csv file.
+- Updated name from LOINC Multiaxial Hierarchy to LOINC Component Hierarchy by System.
+
+
 ## Version 0.10
 Released 2022-01-21
 
