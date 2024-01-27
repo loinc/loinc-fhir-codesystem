@@ -2,6 +2,13 @@
 
 Please see the associated Readme for technical details about the contents of this file.
 
+## Version 0.12
+Released 2024-01-26
+
+Edits include:
+- Updated copyright year
+
+
 ## Version 0.11
 Released 2023-02-17
 
