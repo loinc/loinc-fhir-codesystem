@@ -247,7 +247,7 @@ Servers may generate variants of this for the LOINC version(s) and features they
 	</property>
 	<property>
 		<code value="EXMPL_ANSWERS"/>
-		<uri value="http://lostringinc.org/property/EXMPL_ANSWERS"/>
+		<uri value="http://loinc.org/property/EXMPL_ANSWERS"/>
 		<description value="For some tests and measurements, we have supplied examples of valid answers, such as “1:64”, “negative @ 1:16”, or “55”."/>
 		<type value="string"/>
 	</property>
